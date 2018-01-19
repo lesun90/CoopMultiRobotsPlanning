@@ -1,0 +1,19 @@
+runScript $1 $2 $3 $4
+scene=$1
+planner=$2
+depth=$3
+searchType=$4
+echo $scene $planner $depth $searchType
+sceneFile="data/$scene/$scene.txt"
+TypeArray=(0 1)
+nrRobot=3
+for robotType in ${TypeArray[*]}
+do
+  for(( i = 0; i < 60; i++ ))
+  do
+    queryfile="data/$scene/query/query0.txt"
+    resfile="stats/$scene/res_${planner}_${robotType}_${depth}.txt"
+    echo "./bin/Runner Run${planner}Planner $sceneFile $i $nrRobot $robotType $depth $searchType $resfile"
+    ./bin/Runner Run${planner}Planner $sceneFile $queryfile $nrRobot $robotType $depth $searchType $resfile 10
+  done
+done

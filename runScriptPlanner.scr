@@ -1,0 +1,23 @@
+$1 $2
+scene=$1
+planner=$2
+echo $scene $planner
+sceneFile="data/$scene/$scene.txt"
+TypeArray=(0 1)
+nrRobotArray=(1)
+
+for robotType in ${TypeArray[*]}
+do
+  for nrRobot in ${nrRobotArray[*]}
+  do
+    for(( i = 0; i < 60; i++ ))
+    do
+      queryfile="data/$scene/query/query.txt"
+      resfile="stats2/$scene/res_${planner}_${robotType}.txt"
+      echo "Run${planner} robotType:$robotType query:$queryfile"
+      echo "./bin/Runner Run${planner}Planner $sceneFile $queryfile $nrRobot $robotType $resfile"
+
+      ./bin/Runner Run${planner}Planner $sceneFile $queryfile $nrRobot $robotType $resfile 4
+    done
+  done
+done

@@ -1,0 +1,18 @@
+sceneEile="data/sceneE/sceneE.txt"
+resfile="sceneE_res_priority.txt"
+
+for(( i = 0; i < 10; i++ )) do
+  queryfile="data/sceneE/sceneE_query$i.txt.txt"
+  echo 10 $queryfile
+  ./bin/Runner RunPriorityPlanner $sceneEile $queryfile 6 $resfile
+done
+for(( i = 0; i < 10; i++ )) do
+  queryfile="data/sceneE/sceneE_query$i.txt.txt"
+  echo 10 $queryfile
+  ./bin/Runner RunPriorityPlanner $sceneEile $queryfile 8 $resfile
+done
+for(( i = 0; i < 10; i++ )) do
+  queryfile="data/sceneE/sceneE_query$i.txt.txt"
+  echo 10 $queryfile
+  ./bin/Runner RunPriorityPlanner $sceneEile $queryfile 10 $resfile
+done

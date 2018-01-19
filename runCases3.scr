@@ -1,0 +1,5 @@
+gnome-terminal -x bash -c "
+./runScriptCoopCases.scr case3 Coop 5 0"
+
+gnome-terminal -x bash -c "
+./runScriptCoopCases.scr case3 Coop 10 0"

@@ -1,0 +1,17 @@
+gnome-terminal -x bash -c "
+./runScriptCoopCases.scr case1 Coop 5 0
+./runScriptCoopCases.scr case1 Coop 10 0
+./runScriptCoopCases.scr case1 Coop 0 1
+./runScriptCoopCases.scr case1 Coop 2 0"
+
+gnome-terminal -x bash -c "
+./runScriptCoopCases.scr case2 Coop 5 0
+./runScriptCoopCases.scr case2 Coop 10 0
+./runScriptCoopCases.scr case2 Coop 0 1
+./runScriptCoopCases.scr case2 Coop 2 0"
+
+gnome-terminal -x bash -c "
+./runScriptCoopCases.scr case3 Coop 5 0
+./runScriptCoopCases.scr case3 Coop 10 0
+./runScriptCoopCases.scr case3 Coop 0 1
+./runScriptCoopCases.scr case3 Coop 2 0"

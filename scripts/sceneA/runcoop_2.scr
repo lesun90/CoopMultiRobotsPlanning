@@ -1,0 +1,25 @@
+scene=sceneA
+planner=Coop
+sceneFile="data/$scene/$scene.txt"
+searchType=0
+
+TypeArray=(0 1)
+DepthArray=(2)
+nrRobotArray=(1 2 4 6 8 10)
+
+for robotType in ${TypeArray[*]}
+do
+  for depth in ${DepthArray[*]}
+  do
+    for nrRobot in ${nrRobotArray[*]}
+    do
+      for(( i = 0; i < 60; i++ ))
+      do
+        queryfile="data/$scene/query/query$i.txt"
+        resfile="stats/$scene/res_${planner}_${robotType}_${depth}.txt"
+        echo "Run$planner robotType:$robotType depth:$depth query:$queryfile"
+        ./bin/Runner Run${planner}Planner $sceneFile $queryfile $nrRobot $robotType $depth $searchType $resfile
+      done
+    done
+  done
+done
