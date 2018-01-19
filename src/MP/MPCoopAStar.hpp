@@ -20,11 +20,7 @@ namespace MP
 
     virtual void PermuteRobotOrder()
     {
-      int nrshuffle = RandomUniformInteger(3, 5);
-      for(int i = 0; i < nrshuffle; i++)
-      {
-        std::random_shuffle ( m_robotOrder.begin(), m_robotOrder.end() );
-      }
+      std::random_shuffle(m_robotOrder.begin(), m_robotOrder.end());
     }
 
     virtual void ClearReservationTable(void)
@@ -44,7 +40,6 @@ namespace MP
     }
     virtual void CompletePaths();
 
-
     struct SpaceTimeNode
     {
       SpaceTimeNode(void) :
@@ -58,9 +53,6 @@ namespace MP
     };
 
     UseMap(int, SpaceTimeNode*)   m_reservetable;
-
-    std::vector<int>  m_robotOrder;
-
     class CoopSearch : public GraphSearchInfo<std::vector<int>>
     {
     public:
@@ -92,6 +84,7 @@ namespace MP
       std::vector<int>              m_inits;
       int                           m_nrRobot;
       int                           m_rid;
+
     };
 
   };

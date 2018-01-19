@@ -153,6 +153,7 @@ namespace MP
     int                           m_nrRobot;
     double                        m_weight;
     int                           m_depth;
+    std::vector<int>              m_robotOrder;
 
 
   };

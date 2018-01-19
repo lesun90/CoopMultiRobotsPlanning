@@ -5,6 +5,7 @@ namespace MP
 {
   MPCoopAStar::MPCoopAStar()
   {
+    printf("Use MPCoopAStar search\n");
     m_depth = 20;
   }
 

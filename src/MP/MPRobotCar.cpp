@@ -304,7 +304,7 @@ namespace MP
       DesiredVel = m_minVel;
     }
 
-    if (dist < 1)
+    if (dist < 2.5)
     {
       DesiredVel = 0;
     }
@@ -321,12 +321,18 @@ namespace MP
     && (Algebra2D::PointDist(GetCfg(),target)<15) && (m_currState->m_state[STATE_VEL] < m_maxVel/3))
     {
       m_pidVel.SetDesiredValue(RandomUniformReal(0.5, 1.0) * -DesiredVel);
-      m_currControl[CONTROL_STEER_VEL] = m_pidSteer.Update(Algebra2D::VecFromToAngleCCW(u, c), m_dt);
+      if (dist>m_bodyLength/2)
+      {
+        m_currControl[CONTROL_STEER_VEL] = m_pidSteer.Update(Algebra2D::VecFromToAngleCCW(u, c), m_dt);
+      }
     }
     else
     {
       m_pidVel.SetDesiredValue(RandomUniformReal(0.5, 1.0) * DesiredVel);
-      m_currControl[CONTROL_STEER_VEL] = m_pidSteer.Update(Algebra2D::VecFromToAngleCCW(u, v), m_dt);
+      if (dist>m_bodyLength/2)
+      {
+        m_currControl[CONTROL_STEER_VEL] = m_pidSteer.Update(Algebra2D::VecFromToAngleCCW(u, v), m_dt);
+      }
     }
 
     // m_pidVel.SetDesiredValue(RandomUniformReal(0.5, 1.0) * m_maxVel);
@@ -346,22 +352,31 @@ namespace MP
   void MPRobotCar::SteerToPosition(const double target[])
   {
     const double u[2] = {target[0] - m_currState->m_state[0], target[1] - m_currState->m_state[1]};
+    double dist = sqrt(u[0]*u[0]+u[1]*u[1]);
+
     const double v[2] = {cos(m_currState->m_state[STATE_THETA] + m_currState->m_state[STATE_STEER_ANGLE]),sin(m_currState->m_state[STATE_THETA] + m_currState->m_state[STATE_STEER_ANGLE])};
     const double c[2] = {cos(m_currState->m_state[STATE_THETA] - m_currState->m_state[STATE_STEER_ANGLE]),sin(m_currState->m_state[STATE_THETA] - m_currState->m_state[STATE_STEER_ANGLE])};
     const double r[2] = {cos(m_currState->m_state[STATE_THETA]),sin(m_currState->m_state[STATE_THETA])};
 
     const double angleCurrTarget = Algebra2D::AngleNormalize(Algebra2D::VecFromToAngleCCW(r,u),0);
 
+
     if ((angleCurrTarget > 0.75 * M_PI ) && (angleCurrTarget < 1.25 * M_PI)
     && (Algebra2D::PointDist(GetCfg(),target)<15) && (m_currState->m_state[STATE_VEL] < m_maxVel/3))
     {
       m_pidVel.SetDesiredValue(RandomUniformReal(0.5, 1.0) * m_minVel);
-      m_currControl[CONTROL_STEER_VEL] = m_pidSteer.Update(Algebra2D::VecFromToAngleCCW(u, c), m_dt);
+      if (dist>m_bodyLength/2)
+      {
+        m_currControl[CONTROL_STEER_VEL] = m_pidSteer.Update(Algebra2D::VecFromToAngleCCW(u, c), m_dt);
+      }
     }
     else
     {
       m_pidVel.SetDesiredValue(RandomUniformReal(0.5, 1.0) * m_maxVel);
-      m_currControl[CONTROL_STEER_VEL] = m_pidSteer.Update(Algebra2D::VecFromToAngleCCW(u, v), m_dt);
+      if (dist>m_bodyLength/2)
+      {
+        m_currControl[CONTROL_STEER_VEL] = m_pidSteer.Update(Algebra2D::VecFromToAngleCCW(u, v), m_dt);
+      }
     }
 
     // m_pidVel.SetDesiredValue(RandomUniformReal(0.5, 1.0) * m_maxVel);

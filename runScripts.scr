@@ -1,17 +1,8 @@
 gnome-terminal -x bash -c "
-./runScriptCoop.scr sceneA Coop 0 1
-./runScriptCoop.scr sceneA Coop 2 0
-./runScriptCoop.scr sceneA Coop 5 0
-./runScriptCoop.scr sceneA Coop 10 0"
+./runScriptCoop.scr sceneA Coop 0 2"
 
 gnome-terminal -x bash -c "
-./runScriptCoop.scr sceneB Coop 0 1
-./runScriptCoop.scr sceneB Coop 2 0
-./runScriptCoop.scr sceneB Coop 5 0
-./runScriptCoop.scr sceneB Coop 10 0"
+./runScriptCoop.scr sceneB Coop 0 2"
 
 gnome-terminal -x bash -c "
-./runScriptCoop.scr sceneC Coop 0 1
-./runScriptCoop.scr sceneC Coop 2 0
-./runScriptCoop.scr sceneC Coop 5 0
-./runScriptCoop.scr sceneC Coop 10 0"
+./runScriptCoop.scr sceneC Coop 0 2"

@@ -9,6 +9,7 @@
 #include "Utils/Algebra2D.hpp"
 #include "Utils/Algebra3D.hpp"
 #include "Utils/Timer.hpp"
+#include <cmath>        // std::abs
 
 namespace MP
 {
@@ -74,7 +75,11 @@ namespace MP
     virtual void SteerToPosition(const double target[]) = 0;
     virtual void SteerToStop(const double target[]) = 0;
     virtual void StopVehicle() = 0;
-
+    virtual double GetVelocity(void) const = 0;
+    virtual double GetSpeed(void) const
+    {
+      return std::abs(GetVelocity());
+    }
     virtual void CopyState(MPState * const dest, const MPState * const src) const = 0;
   	virtual MPState* CopyState(const MPState * const src) const
   	{

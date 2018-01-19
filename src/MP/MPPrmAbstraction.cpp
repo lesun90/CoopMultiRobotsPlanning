@@ -54,7 +54,7 @@ namespace MP
     m_triAbs = new MPTriAbstraction();
     m_triAbs->SetScene(m_scene);
     m_triAbs->m_grid.Setup(2, m_scene->m_grid.GetDims(), m_scene->m_grid.GetMin(), m_scene->m_grid.GetMax());
-    // m_triAbs->m_areaConstraint = 5;
+    m_triAbs->m_areaConstraint = 25;
     m_triAbs->Triangulate();
     m_triAbs->LocatorCompleteSetup();
 
@@ -471,6 +471,11 @@ namespace MP
       reg2->m_neighs.push_back(rid1);
       reg2->m_dists.push_back(d);
       reg2->m_weights.push_back(d);
+
+      if (m_minClearance > d)
+      {
+        m_minClearance = d;
+      }
 
       m_disjointSet.Join(reg1->m_dset, reg2->m_dset);
 

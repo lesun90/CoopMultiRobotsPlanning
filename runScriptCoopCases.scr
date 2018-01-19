@@ -12,7 +12,7 @@ do
   for(( i = 0; i < 60; i++ ))
   do
     queryfile="data/$scene/query/query0.txt"
-    resfile="stats/$scene/res_${planner}_${robotType}_${depth}.txt"
+    resfile="stats/$scene/res_${planner}_${robotType}_${depth}_${searchType}.txt"
     echo "./bin/Runner Run${planner}Planner $sceneFile $i $nrRobot $robotType $depth $searchType $resfile"
     ./bin/Runner Run${planner}Planner $sceneFile $queryfile $nrRobot $robotType $depth $searchType $resfile 10
   done

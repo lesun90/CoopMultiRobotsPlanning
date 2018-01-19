@@ -9,6 +9,7 @@
 #include "Utils/GraphSearch.hpp"
 #include "Utils/Timer.hpp"
 #include <stack>          // std::stack
+#include "MP/MPFollowPlanner.hpp"
 
 namespace MP
 {
@@ -43,6 +44,16 @@ namespace MP
     virtual int GetCurrentRegion(void)
     {
       return m_abstract->LocateRegion(m_sim->GetCfg());
+    }
+
+    virtual double* GetInitCfg(void)
+    {
+      return m_abstract->m_scene->m_robotInit[m_sim->m_id]->m_cfg;
+    }
+
+    virtual double* GetGoalCfg(void)
+    {
+      return m_abstract->m_scene->m_goals[m_sim->m_id]->m_cfg;
     }
 
     virtual void SetCurrentRegion(int region)
@@ -190,6 +201,12 @@ namespace MP
       m_currPathToGoal = path;
     }
 
+    virtual void ClearPaths(void)
+    {
+      m_statePath.clear();
+      m_cfgPath.clear();
+    }
+
     virtual void GenerateTarget(void);
     virtual void GenerateRandomTarget(void);
 
@@ -199,6 +216,8 @@ namespace MP
     virtual bool HasReachNextRegion(void);
 
     virtual void GetCurrentPath(const MPState * const s,std::vector<int> path);
+
+    virtual void FindFollowRegionPath(const MPState * const s);
 
 
     void DrawPathToGoal(void)
@@ -253,6 +272,7 @@ namespace MP
     std::vector<int>       m_pathToGoal;
     double                *m_target;
     int                    m_currentRegion;
+    double                  m_radius;
     double                 m_tolReach;
     double                 m_sampleradius;
     double                 m_tolReachregion;
@@ -268,7 +288,9 @@ namespace MP
     std::vector<MPState*>  m_currStatePath;
     std::vector<double*>   m_currCfgPath;
     int m_needNrCfg;
-
+    std::vector<std::vector<double*>> m_reserveTable;
+    bool m_plannerSolved;
+    int m_maxTime;
   };
 }
 

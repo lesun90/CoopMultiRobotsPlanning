@@ -16,16 +16,14 @@ spaces and relying on cooperative multi-agent graph search to effectively find g
 - Pybullet library
 
 ## Getting Started
-### Prerequisites
 ```
 cmake -DCMAKE_BUILD_TYPE="Release"
 make
-
+./bin/Runner GRunCoopPlanner data/case1/case1.txt data/case1/query/query0.txt 3
 ```
+- Press "r" until solved.
+
 
 ## License
 
 Please contact me via lesun90@gmail.com if you want to use this code for your work.
-
-
-## Acknowledgments

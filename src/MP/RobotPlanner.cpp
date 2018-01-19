@@ -27,16 +27,16 @@ namespace MP
     m_sim->CompleteSetup();
     m_target = m_sim->NewCfg();
 
-    //TODO: read from setup file
-    m_tolReach = 2;
-    m_tolReachregion = 2;
-    m_sampleradius = 4;
+    m_tolReach = 2.5;
+    m_sampleradius = 5;
+    m_tolReachregion = m_sampleradius;
 
     m_goalRid = m_abstract->LocateRegion(m_sim->m_goal);
     m_currentRegion = m_abstract->LocateRegion(m_sim->GetCfg());
     m_path.clear();
     m_prepareToStop = false;
     m_shouldStop = false;
+    m_maxTime = -1;
 
   }
 
@@ -44,9 +44,10 @@ namespace MP
   {
     DrawRobot();
     DrawGoal();
+    DrawCfgPath();
     // DrawNextTarget();
     //if(m_pathToGoal.size()>0)
-    //DrawDiscretePathToGoal();
+    DrawDiscretePathToGoal();
     //DrawAbstract();
   }
 
@@ -109,41 +110,40 @@ namespace MP
     GDraw2D();
     GDrawIndexColor(m_sim->m_id);
 
-    const int n = m_pathToGoal.size();
+    const int n = m_currPathToGoal.size();
     	for(int i = 0; i < n - 1; ++i)
     	{
-    	    const double *p1   = m_abstract->m_regions[m_pathToGoal[i]]->m_cfg;
-    	    const double *p2   = m_abstract->m_regions[m_pathToGoal[i+1]]->m_cfg;
+    	    const double *p1   = m_abstract->m_regions[m_currPathToGoal[i]]->m_cfg;
+    	    const double *p2   = m_abstract->m_regions[m_currPathToGoal[i+1]]->m_cfg;
     	    const double  d    = p1[2];
     	    const double  vx   = p2[0] - p1[0];
     	    const double  vy   = p2[1] - p1[1];
     	    const double  norm = sqrt(vx * vx + vy * vy);
     	    const double  ux   = -vy * d / norm;
     	    const double  uy   =  vx * d/ norm;
-
-
     	    GDrawSegment2D(p1, p2);
-
     	}
 
     	GDrawWireframe(true);
     	for(int i = 0; i < n; ++i)
-    	    GDrawCircle2D(m_abstract->m_regions[m_pathToGoal[i]]->m_cfg, m_tolReach);
+      {
+        GDrawCircle2D(m_abstract->m_regions[m_currPathToGoal[i]]->m_cfg, 0.5);
+        // GDrawCircle2D(m_abstract->m_regions[m_currPathToGoal[i]]->m_cfg, m_sampleradius);
+      }
     	GDrawWireframe(false);
       //
     	// for(int i = 0; i < n; ++i)
     	//     GDrawCircle2D(m_abstract->m_regions[m_pathToGoal[i]]->m_cfg, m_tolReach);
 
-    	// char msg[100];
-      //
-    	// GDrawColor(0, 0, 0);
-    	// for(int i = 0; i < n; ++i)
-    	// {
-    	//     sprintf(msg, "%d", i);
-    	//     GDrawString2D(msg, GetWaypt(i)[0], GetWaypt(i)[1]);
-    	// }
-      //
-      //
+    	char msg[100];
+
+    	GDrawColor(0, 0, 0);
+    	for(int i = 0; i < n; ++i)
+    	{
+    	    sprintf(msg, "%d", i);
+    	    GDrawString2D(msg, m_abstract->m_regions[m_currPathToGoal[i]]->m_cfg[0]
+            , m_abstract->m_regions[m_currPathToGoal[i]]->m_cfg[1]);
+    	}
 
     GDrawPopTransformation();
 
@@ -233,6 +233,48 @@ namespace MP
 
   void RobotPlanner::GetCurrentPath(const MPState * const s,std::vector<int> path)
   {
+
+  }
+
+  void RobotPlanner::FindFollowRegionPath(const MPState * const s)
+  {
+    printf("id %d\n",m_sim->m_id );
+    MPFollowPlanner fplanner;
+    fplanner.m_reserveTable = m_reserveTable;
+    fplanner.m_maxTime = m_maxTime;
+    fplanner.m_sim = m_sim;
+    fplanner.m_sim->SetState(s);
+    MPFollowPlanner::WayPoint wp;
+    wp.m_radius = m_sampleradius;
+    wp.m_tolReach = m_tolReachregion/2;
+    wp.m_cfg = fplanner.m_sim->GetCfg();
+
+    for (int i = 0 ; i < m_currPathToGoal.size(); i++)
+    {
+      if (i == 0)
+      {
+        fplanner.m_waypts.push_back(wp);
+        continue;
+      }
+      wp.m_cfg = m_abstract->m_regions[m_currPathToGoal[i]]->m_cfg;
+      fplanner.m_waypts.push_back(wp);
+      if (m_currPathToGoal[i]==m_currPathToGoal[i-1])
+      {
+        m_currPathToGoal.resize(i+1);
+        break;
+      }
+    }
+    fplanner.m_waypts.back().m_tolReach = 2.5;
+    fplanner.Run();
+    m_plannerSolved = true;
+    if ((fplanner.m_nrIters>=fplanner.m_maxiters))
+    {
+      m_plannerSolved = false;
+    }
+    m_statePath = fplanner.m_statePath;
+    m_cfgPath = fplanner.m_cfgPath;
+    printf("m_plannerSolved %d\n",m_plannerSolved );
+    printf("m_cfgPath size  %d\n",m_statePath.size() );
 
   }
 

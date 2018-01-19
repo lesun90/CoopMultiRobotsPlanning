@@ -50,9 +50,9 @@ extern "C" int RunCoopPlanner(int argc, char **argv)
   }
   tcurr = Timer::Elapsed(&clk);
   Stats::GetSingleton()->AddValue("TotalRunTime", tcurr);
-
-  m_planner.PrintStat(out);
+  
   m_planner.ShowStat();
+  m_planner.PrintStat(out);
 
   fclose (out); // must close after opening
 

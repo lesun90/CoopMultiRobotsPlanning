@@ -26,13 +26,7 @@ namespace MP
       std::vector<int> m_cellsIntersect;
     };
 
-    MPTriAbstraction(void) : MPAbstraction(),
-    m_useConformingDelaunay(false),
-    m_angleConstraint(20),
-    m_areaConstraint(100),
-    m_minAreaToAdd(Constants::DECOMPOSITION_MIN_AREA_TO_ADD)
-    {
-    }
+    MPTriAbstraction(void);
 
     virtual ~MPTriAbstraction(void)
     {

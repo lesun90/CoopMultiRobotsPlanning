@@ -6,6 +6,7 @@ namespace MP
 {
   MPPushAndSwap::MPPushAndSwap()
   {
+    printf("Use MPPushAndSwap search\n");
   }
 
   // Write each step of the plan, annotated with the agent id.
@@ -43,7 +44,7 @@ namespace MP
       }
       m_pathsToGoal[simulation[i].first].resize(maxsize,m_pathsToGoal[simulation[i].first].back());
     }
-    // 
+    //
     // for (int k = 0 ; k < m_nrRobot; k++)
     // {
     //   printf("rid: \n",k );

@@ -41,18 +41,21 @@ namespace MP
 
     if (m_searchType == COOPASTART)
     {
-      printf("Use MPCoopAStar search\n");
       m_discreteSearch = new MPCoopAStar();
+      m_discreteSearch->m_depth = m_depthSearch;
+
     }
     else if (m_searchType == PAS)
     {
-      printf("Use MPPushAndSwap search\n");
       m_discreteSearch = new MPPushAndSwap();
+    }
+    else if (m_searchType == SIPP)
+    {
+      m_discreteSearch = new MPSIPP();
     }
 
     m_discreteSearch->SetAbstraction(m_abstract);
     m_discreteSearch->CompleteSetup();
-    m_discreteSearch->m_depth = m_depthSearch;
 
     for (int i = 0; i< m_robots.size(); i++)
     {

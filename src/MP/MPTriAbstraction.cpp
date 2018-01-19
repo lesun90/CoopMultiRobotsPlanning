@@ -4,6 +4,13 @@
 
 namespace MP
 {
+  MPTriAbstraction::MPTriAbstraction(void): MPAbstraction()
+  {
+   m_useConformingDelaunay = true;
+   m_angleConstraint = 20;
+   m_areaConstraint = 520;
+   m_minAreaToAdd = Constants::DECOMPOSITION_MIN_AREA_TO_ADD;
+  }
   void MPTriAbstraction::CompleteSetup(void)
   {
     m_grid.Setup(2, m_scene->m_grid.GetDims(), m_scene->m_grid.GetMin(), m_scene->m_grid.GetMax());
@@ -290,14 +297,6 @@ namespace MP
       std::vector<int>    triIndices;
       std::vector<int>    triNeighs;
 
-      // m_useConformingDelaunay = true;
-      // m_angleConstraint = 20;
-      // m_areaConstraint = 10;
-      // m_areaConstraint = 200;
-      // m_useConformingDelaunay = false;
-      // m_angleConstraint = 20;
-      // m_areaConstraint = 100;
-      printf("m_areaConstraint%f\n",m_areaConstraint );
       TriangulatePolygonWithHoles2D(m_useConformingDelaunay,
         m_angleConstraint,
         m_areaConstraint,
@@ -341,7 +340,7 @@ namespace MP
         if(region->m_valid == false)
         {
           ++nrInvalid;
-          //continue;
+          // continue;
         }
         m_regions.push_back(region);
 

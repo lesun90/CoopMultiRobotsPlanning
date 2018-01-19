@@ -4,7 +4,7 @@
 #include "Utils/Algebra3D.hpp"
 #include "Utils/PseudoRandom.hpp"
 #include "Utils/Flags.hpp"
-#include "MP/MPCoopPlanner.hpp"
+#include "MP/MPCoordPlanner.hpp"
 #include "MP/MPDiscretePlanner.hpp"
 
 
@@ -48,53 +48,21 @@ namespace MP
     {
       GManager::HandleEventOnDisplay();
       m_planner.Draw();
-
-      if(m_planner.IsSolved() == true)
-      {
-        ExportFrameAsImage();
-      }
-
-      // const bool is2D = GDrawIs2D();
-      // GDrawPushTransformation();
-      // GDrawMultTrans(0, 0, 0.3);
-      // GDraw2D();
-      // GDrawIndexColor(5);
-      // for (int i = 0; i < points.size(); i ++)
-      // {
-      //   GDrawCircle2D(points[i], 0.5);
-      //   if (i%2==1)
-      //   {
-      //     GDrawSegment2D(points[i], points[i-1]);
-      //   }
-      // }
-      // GDrawPopTransformation();
-
-      // if(!is2D)
-      // GDraw3D();
-
     }
 
     virtual bool HandleEventOnNormalKeyPress(const int key)
     {
-      ExportFrameAsImage();
       if(key == 'r')
       {
-        Timer::Clock clk;
-        Timer::Start(&clk);
-        m_planner.Run(100);
-        m_runtime += Timer::Elapsed(&clk);
-        printf("[total time = %f %d]\n",m_runtime, m_planner.IsSolved() );
-
+        m_planner.Run(1);
       }
-      if(m_planner.IsSolved()>0)
+      if(m_planner.IsSolved() == true)
       {
         for (int i = 0 ; i < m_planner.m_robots.size(); i++)
         {
           m_rpos[i] = 0;
         }
       }
-      printf("done ... solved       = %d\n", m_planner.IsSolved() > 0);
-      m_planner.ShowStat();
       return GManager::HandleEventOnNormalKeyPress(key);
     }
 
@@ -131,9 +99,9 @@ namespace MP
       {
         for (int r = 0; r < m_planner.m_robots.size(); ++r)
         {
-          if (m_rpos[r]>=m_planner.m_robots[r]->m_path.size())
+          if (m_rpos[r]>=m_planner.m_robots[r]->m_statePath.size())
           {
-            m_rpos[r] = m_planner.m_robots[r]->m_path.size() - 1;
+            m_rpos[r] = m_planner.m_robots[r]->m_statePath.size() - 1;
           }
           m_planner.m_robots[r]->SetRobotStateAtPos(m_rpos[r]);
           m_rpos[r]++;
@@ -152,7 +120,7 @@ namespace MP
     }
 
     Flags                 m_flags;
-    MPCoopPlanner        m_planner;
+    MPCoordPlanner        m_planner;
     std::vector<double*>  points;
     std::vector<int>      m_rpos;
     double                m_runtime;
@@ -177,8 +145,6 @@ extern "C" int GRunCoordPlanner(int argc, char **argv)
     gManager.m_planner.m_scene.m_nrRobot = nrRobot;
     gManager.m_planner.m_scene.SetupFromFile(in,query);
     gManager.m_planner.m_robotType = robotType;
-    gManager.m_planner.m_depthSearch = depthSearch;
-    gManager.m_planner.m_searchType = searchType;
     gManager.m_planner.CompleteSetup();
     gManager.m_rpos.resize(gManager.m_planner.m_robots.size());
     for (int i = 0 ; i < gManager.m_rpos.size(); i++)

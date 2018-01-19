@@ -137,13 +137,14 @@ extern "C" int GRunDiscretePlanner(int argc, char **argv)
   FILE        *in           = argc > 1 ? fopen(argv[1], "r") : NULL;
   FILE        *query        = argc > 2 ? fopen(argv[2], "r") : NULL;
   int          nrRobot      = argc > 3 ? atoi(argv[3]) : 1;
-  int          robotType    = argc > 4 ? atoi(argv[4]) : 0;
-
+  int          searchType   = argc > 4 ? atoi(argv[4]) : 0;
+  int          robotType    = argc > 5 ? atoi(argv[5]) : 0;
   if(in&&query)
   {
     gManager.m_planner.m_scene.m_nrRobot = nrRobot;
     gManager.m_planner.m_scene.SetupFromFile(in,query);
     gManager.m_planner.m_robotType = robotType;
+    gManager.m_planner.m_searchType = searchType;
     gManager.m_planner.CompleteSetup();
     gManager.m_rpos.resize(gManager.m_planner.m_robots.size());
     for (int i = 0 ; i < gManager.m_rpos.size(); i++)

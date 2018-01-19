@@ -604,6 +604,7 @@ CMakeFiles/Runner.dir/src/MP/MPCentralizedPlanner.cpp.o
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPCentralizedPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
  src/MP/MPProximityPlanner.hpp
@@ -812,12 +813,14 @@ CMakeFiles/Runner.dir/src/MP/MPCoopPlanner.cpp.o
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPCoopAStar.hpp
  src/MP/MPCoopPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPMultiSearch.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
  src/MP/MPProximityPlanner.hpp
  src/MP/MPPushAndSwap.hpp
  src/MP/MPRobotCar.hpp
+ src/MP/MPSIPP.hpp
  src/MP/MPScene.hpp
  src/MP/MPSimulator.hpp
  src/MP/MPTreePlanner.hpp
@@ -858,7 +861,162 @@ CMakeFiles/Runner.dir/src/MP/MPCoopPlanner.cpp.o
  src/Utils/glutForWindows.h
 CMakeFiles/Runner.dir/src/MP/MPCoordPlanner.cpp.o
  /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/MP/MPCoordPlanner.cpp
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btDbvt.h
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btDbvtBroadphase.h
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btDispatcher.h
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btOverlappingPairCache.h
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btOverlappingPairCallback.h
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btQuantizedBvh.h
+ /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btSimpleBroadphase.h
+ /usr/local/include/bullet/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h
+ /usr/local/include/bullet/BulletCollision/CollisionDispatch/btCollisionConfiguration.h
+ /usr/local/include/bullet/BulletCollision/CollisionDispatch/btCollisionCreateFunc.h
+ /usr/local/include/bullet/BulletCollision/CollisionDispatch/btCollisionDispatcher.h
+ /usr/local/include/bullet/BulletCollision/CollisionDispatch/btCollisionObject.h
+ /usr/local/include/bullet/BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h
+ /usr/local/include/bullet/BulletCollision/CollisionDispatch/btCollisionWorld.h
+ /usr/local/include/bullet/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h
+ /usr/local/include/bullet/BulletCollision/CollisionDispatch/btManifoldResult.h
+ /usr/local/include/bullet/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btBoxShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btCapsuleShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btCollisionMargin.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btCollisionShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btCompoundShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btConcaveShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btConeShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexHullShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexInternalShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btCylinderShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btEmptyShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btMultiSphereShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btOptimizedBvh.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btSphereShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btStaticPlaneShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btTetrahedronShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btTriangleCallback.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btTriangleInfoMap.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btTriangleMesh.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btTriangleMeshShape.h
+ /usr/local/include/bullet/BulletCollision/CollisionShapes/btUniformScalingShape.h
+ /usr/local/include/bullet/BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h
+ /usr/local/include/bullet/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h
+ /usr/local/include/bullet/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btConstraintSolver.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btContactSolverInfo.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btFixedConstraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btGearConstraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpring2Constraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btHinge2Constraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btHingeConstraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btJacobianEntry.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSliderConstraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h
+ /usr/local/include/bullet/BulletDynamics/ConstraintSolver/btUniversalConstraint.h
+ /usr/local/include/bullet/BulletDynamics/Dynamics/btActionInterface.h
+ /usr/local/include/bullet/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h
+ /usr/local/include/bullet/BulletDynamics/Dynamics/btDynamicsWorld.h
+ /usr/local/include/bullet/BulletDynamics/Dynamics/btRigidBody.h
+ /usr/local/include/bullet/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h
+ /usr/local/include/bullet/BulletDynamics/Vehicle/btRaycastVehicle.h
+ /usr/local/include/bullet/BulletDynamics/Vehicle/btVehicleRaycaster.h
+ /usr/local/include/bullet/BulletDynamics/Vehicle/btWheelInfo.h
+ /usr/local/include/bullet/LinearMath/btAabbUtil2.h
+ /usr/local/include/bullet/LinearMath/btAlignedAllocator.h
+ /usr/local/include/bullet/LinearMath/btAlignedObjectArray.h
+ /usr/local/include/bullet/LinearMath/btDefaultMotionState.h
+ /usr/local/include/bullet/LinearMath/btHashMap.h
+ /usr/local/include/bullet/LinearMath/btIDebugDraw.h
+ /usr/local/include/bullet/LinearMath/btMatrix3x3.h
+ /usr/local/include/bullet/LinearMath/btMinMax.h
+ /usr/local/include/bullet/LinearMath/btMotionState.h
+ /usr/local/include/bullet/LinearMath/btQuadWord.h
+ /usr/local/include/bullet/LinearMath/btQuaternion.h
+ /usr/local/include/bullet/LinearMath/btQuickprof.h
+ /usr/local/include/bullet/LinearMath/btScalar.h
+ /usr/local/include/bullet/LinearMath/btSerializer.h
+ /usr/local/include/bullet/LinearMath/btThreads.h
+ /usr/local/include/bullet/LinearMath/btTransform.h
+ /usr/local/include/bullet/LinearMath/btTransformUtil.h
+ /usr/local/include/bullet/LinearMath/btVector3.h
+ /usr/local/include/bullet/btBulletCollisionCommon.h
+ /usr/local/include/bullet/btBulletDynamicsCommon.h
+ src/External/PAS/Agent.hpp
+ src/External/PAS/Graph.hpp
+ src/External/PAS/PushAndSwap.hpp
+ src/External/PQP/BV.h
+ src/External/PQP/PQP.h
+ src/External/PQP/PQPTriMesh.hpp
+ src/External/PQP/PQP_Compile.h
+ src/External/PQP/PQP_Internal.h
+ src/External/PQP/Tri.h
+ src/MP/Constants.hpp
+ src/MP/MPAbstraction.hpp
+ src/MP/MPBSimulator.hpp
+ src/MP/MPBVehicleSimulator.hpp
+ src/MP/MPCoopAStar.hpp
  src/MP/MPCoordPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
+ src/MP/MPMultiSearch.hpp
+ src/MP/MPPrmAbstraction.hpp
+ src/MP/MPPushAndSwap.hpp
+ src/MP/MPRobotCar.hpp
+ src/MP/MPScene.hpp
+ src/MP/MPSimulator.hpp
+ src/MP/MPTriAbstraction.hpp
+ src/MP/RobotPlanner.hpp
+ src/Utils/Algebra.hpp
+ src/Utils/Algebra2D.hpp
+ src/Utils/Algebra3D.hpp
+ src/Utils/Allocator.hpp
+ src/Utils/BinarySearch.hpp
+ src/Utils/Constants.hpp
+ src/Utils/Definitions.hpp
+ src/Utils/DisjointSet.hpp
+ src/Utils/Flags.hpp
+ src/Utils/GDraw.hpp
+ src/Utils/GMaterial.hpp
+ src/Utils/GTexture.hpp
+ src/Utils/Geometry.hpp
+ src/Utils/GraphSearch.hpp
+ src/Utils/Grid.hpp
+ src/Utils/HashFn.hpp
+ src/Utils/Heap.hpp
+ src/Utils/HeightField.hpp
+ src/Utils/Map.hpp
+ src/Utils/Misc.hpp
+ src/Utils/PIDController.hpp
+ src/Utils/Polygon2D.hpp
+ src/Utils/PrintMsg.hpp
+ src/Utils/Proximity.hpp
+ src/Utils/ProximityGNAT.hpp
+ src/Utils/ProximityQuery.hpp
+ src/Utils/ProximityResults.hpp
+ src/Utils/PseudoRandom.hpp
+ src/Utils/Set.hpp
+ src/Utils/Stats.hpp
+ src/Utils/Timer.hpp
+ src/Utils/TriMesh.hpp
+ src/Utils/glutForWindows.h
 CMakeFiles/Runner.dir/src/MP/MPDiscretePlanner.cpp.o
  /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/MP/MPDiscretePlanner.cpp
  /usr/local/include/bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -975,10 +1133,12 @@ CMakeFiles/Runner.dir/src/MP/MPDiscretePlanner.cpp.o
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPCoopAStar.hpp
  src/MP/MPDiscretePlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPMultiSearch.hpp
  src/MP/MPPrmAbstraction.hpp
  src/MP/MPPushAndSwap.hpp
  src/MP/MPRobotCar.hpp
+ src/MP/MPSIPP.hpp
  src/MP/MPScene.hpp
  src/MP/MPSimulator.hpp
  src/MP/MPTriAbstraction.hpp
@@ -1514,6 +1674,7 @@ CMakeFiles/Runner.dir/src/MP/MPPriorityPlanner.cpp.o
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPEPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPriorityPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
@@ -1669,6 +1830,7 @@ CMakeFiles/Runner.dir/src/MP/MPPriorityPlannerRRT.cpp.o
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPEPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPriorityPlannerRRT.hpp
  src/MP/MPPrmAbstraction.hpp
@@ -2423,6 +2585,7 @@ CMakeFiles/Runner.dir/src/MP/RobotPlanner.cpp.o
  src/MP/MPAbstraction.hpp
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPRobotCar.hpp
  src/MP/MPScene.hpp
  src/MP/MPSimulator.hpp
@@ -2566,6 +2729,7 @@ CMakeFiles/Runner.dir/src/Programs/GRunCentralizedPlanner.cpp.o
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPCentralizedPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
  src/MP/MPProximityPlanner.hpp
@@ -2727,12 +2891,14 @@ CMakeFiles/Runner.dir/src/Programs/GRunCoopPlanner.cpp.o
  src/MP/MPCoopAStar.hpp
  src/MP/MPCoopPlanner.hpp
  src/MP/MPDiscretePlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPMultiSearch.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
  src/MP/MPProximityPlanner.hpp
  src/MP/MPPushAndSwap.hpp
  src/MP/MPRobotCar.hpp
+ src/MP/MPSIPP.hpp
  src/MP/MPScene.hpp
  src/MP/MPSimulator.hpp
  src/MP/MPTreePlanner.hpp
@@ -2888,17 +3054,16 @@ CMakeFiles/Runner.dir/src/Programs/GRunCoordPlanner.cpp.o
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPCoopAStar.hpp
- src/MP/MPCoopPlanner.hpp
+ src/MP/MPCoordPlanner.hpp
  src/MP/MPDiscretePlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPMultiSearch.hpp
- src/MP/MPPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
- src/MP/MPProximityPlanner.hpp
  src/MP/MPPushAndSwap.hpp
  src/MP/MPRobotCar.hpp
+ src/MP/MPSIPP.hpp
  src/MP/MPScene.hpp
  src/MP/MPSimulator.hpp
- src/MP/MPTreePlanner.hpp
  src/MP/MPTriAbstraction.hpp
  src/MP/RobotPlanner.hpp
  src/Utils/Algebra.hpp
@@ -3053,6 +3218,7 @@ CMakeFiles/Runner.dir/src/Programs/GRunDiscretePlanner.cpp.o
  src/MP/MPCoopAStar.hpp
  src/MP/MPDiscretePlanner.hpp
  src/MP/MPEPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPMultiSearch.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPriorityPlanner.hpp
@@ -3060,6 +3226,7 @@ CMakeFiles/Runner.dir/src/Programs/GRunDiscretePlanner.cpp.o
  src/MP/MPProximityPlanner.hpp
  src/MP/MPPushAndSwap.hpp
  src/MP/MPRobotCar.hpp
+ src/MP/MPSIPP.hpp
  src/MP/MPScene.hpp
  src/MP/MPSimulator.hpp
  src/MP/MPTreePlanner.hpp
@@ -3212,6 +3379,7 @@ CMakeFiles/Runner.dir/src/Programs/GRunEP.cpp.o
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPEPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
  src/MP/MPRobotCar.hpp
@@ -3415,16 +3583,21 @@ CMakeFiles/Runner.dir/src/Programs/GRunFollowPlanner.cpp.o
  src/External/PQP/PQP_Internal.h
  src/External/PQP/Tri.h
  src/MP/Constants.hpp
+ src/MP/MPAbstraction.hpp
  src/MP/MPFollowPlanner.hpp
+ src/MP/MPPrmAbstraction.hpp
  src/MP/MPRobotCar.hpp
  src/MP/MPScene.hpp
  src/MP/MPSimulator.hpp
+ src/MP/MPTriAbstraction.hpp
  src/Utils/Algebra.hpp
  src/Utils/Algebra2D.hpp
  src/Utils/Algebra3D.hpp
  src/Utils/Allocator.hpp
+ src/Utils/BinarySearch.hpp
  src/Utils/Constants.hpp
  src/Utils/Definitions.hpp
+ src/Utils/DisjointSet.hpp
  src/Utils/Flags.hpp
  src/Utils/GCamera.hpp
  src/Utils/GDraw.hpp
@@ -3432,15 +3605,22 @@ CMakeFiles/Runner.dir/src/Programs/GRunFollowPlanner.cpp.o
  src/Utils/GMaterial.hpp
  src/Utils/GTexture.hpp
  src/Utils/Geometry.hpp
+ src/Utils/GraphSearch.hpp
  src/Utils/Grid.hpp
  src/Utils/HashFn.hpp
+ src/Utils/Heap.hpp
  src/Utils/HeightField.hpp
  src/Utils/Map.hpp
  src/Utils/Misc.hpp
  src/Utils/PIDController.hpp
  src/Utils/Polygon2D.hpp
  src/Utils/PrintMsg.hpp
+ src/Utils/Proximity.hpp
+ src/Utils/ProximityGNAT.hpp
+ src/Utils/ProximityQuery.hpp
+ src/Utils/ProximityResults.hpp
  src/Utils/PseudoRandom.hpp
+ src/Utils/Set.hpp
  src/Utils/Stats.hpp
  src/Utils/Timer.hpp
  src/Utils/TriMesh.hpp
@@ -3557,6 +3737,7 @@ CMakeFiles/Runner.dir/src/Programs/GRunPriorityPlanner.cpp.o
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPEPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPriorityPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
@@ -3714,6 +3895,7 @@ CMakeFiles/Runner.dir/src/Programs/GRunPriorityRRTPlanner.cpp.o
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPEPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPriorityPlannerRRT.hpp
  src/MP/MPPrmAbstraction.hpp
@@ -3870,6 +4052,7 @@ CMakeFiles/Runner.dir/src/Programs/GRunRRT.cpp.o
  src/MP/MPAbstraction.hpp
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
  src/MP/MPProximityPlanner.hpp
@@ -4356,12 +4539,14 @@ CMakeFiles/Runner.dir/src/Programs/RunAbs.cpp.o
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPCoopAStar.hpp
  src/MP/MPCoopPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPMultiSearch.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
  src/MP/MPProximityPlanner.hpp
  src/MP/MPPushAndSwap.hpp
  src/MP/MPRobotCar.hpp
+ src/MP/MPSIPP.hpp
  src/MP/MPScene.hpp
  src/MP/MPSimulator.hpp
  src/MP/MPTreePlanner.hpp
@@ -4514,6 +4699,7 @@ CMakeFiles/Runner.dir/src/Programs/RunCentralizedPlanner.cpp.o
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPCentralizedPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
  src/MP/MPProximityPlanner.hpp
@@ -4674,12 +4860,14 @@ CMakeFiles/Runner.dir/src/Programs/RunCoopPlanner.cpp.o
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPCoopAStar.hpp
  src/MP/MPCoopPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPMultiSearch.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
  src/MP/MPProximityPlanner.hpp
  src/MP/MPPushAndSwap.hpp
  src/MP/MPRobotCar.hpp
+ src/MP/MPSIPP.hpp
  src/MP/MPScene.hpp
  src/MP/MPSimulator.hpp
  src/MP/MPTreePlanner.hpp
@@ -4832,6 +5020,7 @@ CMakeFiles/Runner.dir/src/Programs/RunPriorityPlanner.cpp.o
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPEPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPriorityPlanner.hpp
  src/MP/MPPrmAbstraction.hpp
@@ -4989,6 +5178,7 @@ CMakeFiles/Runner.dir/src/Programs/RunPriorityRRTPlanner.cpp.o
  src/MP/MPBSimulator.hpp
  src/MP/MPBVehicleSimulator.hpp
  src/MP/MPEPlanner.hpp
+ src/MP/MPFollowPlanner.hpp
  src/MP/MPPlanner.hpp
  src/MP/MPPriorityPlannerRRT.hpp
  src/MP/MPPrmAbstraction.hpp

@@ -6,6 +6,7 @@
 #include "MP/MPMultiSearch.hpp"
 #include "MP/MPCoopAStar.hpp"
 #include "MP/MPPushAndSwap.hpp"
+#include "MP/MPSIPP.hpp"
 #include "Utils/GraphSearch.hpp"
 #include <vector>
 #include <algorithm>
@@ -36,6 +37,7 @@ namespace MP
     MPMultiSearch *m_multiSearch;
     int m_pos;
     int m_robotType;
+    int m_searchType;
 
   };
 }

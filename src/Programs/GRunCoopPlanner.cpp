@@ -53,7 +53,6 @@ namespace MP
       {
         // ExportFrameAsImage();
       }
-
       // const bool is2D = GDrawIs2D();
       // GDrawPushTransformation();
       // GDrawMultTrans(0, 0, 0.3);

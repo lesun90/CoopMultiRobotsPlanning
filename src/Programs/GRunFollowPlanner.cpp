@@ -7,7 +7,9 @@
 #include "MP/MPFollowPlanner.hpp"
 #include "MP/MPScene.hpp"
 #include "MP/MPRobotCar.hpp"
-
+#include "MP/MPAbstraction.hpp"
+#include "MP/MPTriAbstraction.hpp"
+#include "MP/MPPrmAbstraction.hpp"
 
 namespace MP
 {
@@ -47,12 +49,35 @@ namespace MP
         m_scene->right,
         m_scene->forward);
 
+        m_abstract = new MPTriAbstraction();
+
+        m_abstract->SetScene(m_scene);
+        m_abstract->CompleteSetup();
+
       m_planner.m_sim = new MPRobotCar();
       m_planner.m_sim->m_id = 0;
       m_planner.m_sim->SetScene(m_scene);
       m_planner.m_sim->SetStateFromCfg(m_scene->m_robotInit[0]->m_cfg);
       m_planner.m_sim->SetGoal(m_scene->m_goals[0]->m_cfg);
       m_planner.m_sim->CompleteSetup();
+
+      MPFollowPlanner::WayPoint wp;
+      wp.m_radius = 10;
+      wp.m_tolReach = wp.m_radius;
+      wp.m_cfg = m_planner.m_sim->GetCfg();
+
+      m_planner.m_waypts.push_back(wp);
+      std::vector<int> path2goal;
+      path2goal = m_abstract->m_regions[m_abstract->LocateRegion(m_planner.m_sim->GetCfg())]->m_pathsToGoal[0];
+      for (int i = 1 ; i < path2goal.size(); i++)
+      {
+        wp.m_cfg = m_abstract->m_regions[path2goal[i]]->m_cfg;
+        m_planner.m_waypts.push_back(wp);
+      }
+
+      m_planner.m_reserveTable.resize(1);
+      m_planner.m_reserveTable[0].push_back(m_abstract->m_regions[path2goal[4]]->m_cfg);
+
     }
 
     virtual void HandleEventOnDisplay(void)
@@ -60,13 +85,21 @@ namespace MP
       GManager::HandleEventOnDisplay();
       m_scene->Draw();
       m_planner.Draw();
+      m_abstract->Draw();
+
+      GDrawCircle2D(m_planner.m_reserveTable[0][0], 1);
+
     }
 
     virtual bool HandleEventOnNormalKeyPress(const int key)
     {
       if(key == 'r')
       {
-        m_planner.Run(100);
+        m_planner.Run();
+      }
+      if(m_planner.IsSolved() == true)
+      {
+        m_pos = 0;
       }
       return GManager::HandleEventOnNormalKeyPress(key);
     }
@@ -77,12 +110,26 @@ namespace MP
       m_target = new double[3];
       MousePosFromScreenToWorld(x, y, &m_target[0], &m_target[1], &m_target[2]);
       printf("%f %f \n",m_target[0],m_target[1]);
-      m_planner.m_waypts.push_back(m_target);
+      MPFollowPlanner::WayPoint wp;
+      wp.m_radius = m_planner.m_radius;
+      wp.m_tolReach = m_planner.m_tolReach;
+      wp.m_cfg = m_target;
+
+      // m_planner.m_waypts.push_back(wp);
       return true;
     }
 
     virtual void HandleEventOnTimer(void)
     {
+      if(m_planner.IsSolved()==true)
+      {
+        m_planner.m_sim->SetState(m_planner.m_statePath[m_pos]);
+        m_pos++;
+        if (m_pos == m_planner.m_statePath.size() )
+        {
+          m_pos=0;
+        }
+      }
       GManager::HandleEventOnTimer();
     }
 
@@ -98,6 +145,9 @@ namespace MP
     Flags                 m_flags;
     MPFollowPlanner       m_planner;
     MPScene              *m_scene;
+    int m_pos;
+    MPAbstraction       *m_abstract;
+
 
   };
 };

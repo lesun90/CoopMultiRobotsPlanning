@@ -6,8 +6,8 @@
 #include "MP/RobotPlanner.hpp"
 #include "MP/MPMultiSearch.hpp"
 #include "MP/MPCoopAStar.hpp"
+#include "MP/MPSIPP.hpp"
 #include "MP/MPPushAndSwap.hpp"
-// #include "MP/MPSIPP.hpp"
 #include "Utils/Geometry.hpp"
 
 namespace MP
@@ -19,7 +19,7 @@ namespace MP
     {
       COOPASTART  = 0,
       PAS         = 1,
-      SIPP         = 2
+      SIPP        = 2
     };
 
     MPCoopPlanner();

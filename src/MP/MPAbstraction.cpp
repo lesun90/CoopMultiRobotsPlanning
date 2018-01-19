@@ -20,7 +20,7 @@ namespace MP
     m_grid.Setup(2, m_scene->m_grid.GetDims(), m_scene->m_grid.GetMin(), m_scene->m_grid.GetMax());
 
     //UpdateNeighs();
-    UpdateClearance();
+    // UpdateClearance();
     for(int r = 0 ; r < m_nrRobot; r++)
     {
       m_ridInits[r] = LocateRegion(m_inits[r]);
@@ -104,7 +104,7 @@ namespace MP
 
       void MPAbstraction::Draw()
       {
-        DrawEdges();
+        // DrawEdges();
         DrawRegions();
       }
 
@@ -159,7 +159,7 @@ namespace MP
               w = Constants::EPSILON;
             }
             m_regions[i]->m_weights[j] = w;
-            // printf("%f %f\n",std::min(d1,d2),w );
+            printf("%f\n",w );
           }
         }
       }
@@ -169,7 +169,7 @@ namespace MP
 
       }
 
-      bool MPAbstraction::EdgesCheck(int fromNode, int toNode, int fromCheckNode, int toCheckNode, int step)
+      bool MPAbstraction::EdgesCheck(int fromNode, int toNode, int fromCheckNode, int toCheckNode)
       {
         if ((fromNode == toCheckNode) && (toNode == fromCheckNode))
         {
@@ -181,7 +181,7 @@ namespace MP
           return false;
         }
 
-        if ((Dist2Region(fromNode,fromCheckNode) < m_minClearance) && (step == 0))
+        if (Dist2Region(fromNode,fromCheckNode) < m_minClearance)
         {
           double d = Dist2Region(toNode,toCheckNode);
           if (d < m_minClearance)
@@ -195,7 +195,7 @@ namespace MP
                     m_regions[toNode]->m_cfg,
                     m_regions[fromCheckNode]->m_cfg,
                     m_regions[toCheckNode]->m_cfg);
-          if (cd<m_minClearance)
+          if (cd<2.5)
           {
             return false;
           }

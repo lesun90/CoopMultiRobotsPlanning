@@ -529,8 +529,8 @@ Utils/PseudoRandom.hpp
 /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/Programs/Utils/PseudoRandom.hpp
 Utils/Flags.hpp
 /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/Programs/Utils/Flags.hpp
-MP/MPCoopPlanner.hpp
-/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/Programs/MP/MPCoopPlanner.hpp
+MP/MPCoordPlanner.hpp
+/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/Programs/MP/MPCoordPlanner.hpp
 MP/MPDiscretePlanner.hpp
 /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/Programs/MP/MPDiscretePlanner.hpp
 
@@ -617,6 +617,12 @@ MP/MPScene.hpp
 /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/Programs/MP/MPScene.hpp
 MP/MPRobotCar.hpp
 /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/Programs/MP/MPRobotCar.hpp
+MP/MPAbstraction.hpp
+/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/Programs/MP/MPAbstraction.hpp
+MP/MPTriAbstraction.hpp
+/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/Programs/MP/MPTriAbstraction.hpp
+MP/MPPrmAbstraction.hpp
+/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/Programs/MP/MPPrmAbstraction.hpp
 
 /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/src/Programs/GRunPriorityPlanner.cpp
 Utils/GManager.hpp
@@ -2339,12 +2345,30 @@ MP/MPMultiSearch.hpp
 src/MP/MP/MPMultiSearch.hpp
 MP/MPCoopAStar.hpp
 src/MP/MP/MPCoopAStar.hpp
+MP/MPSIPP.hpp
+src/MP/MP/MPSIPP.hpp
 MP/MPPushAndSwap.hpp
 src/MP/MP/MPPushAndSwap.hpp
 Utils/Geometry.hpp
 src/MP/Utils/Geometry.hpp
 
 src/MP/MPCoordPlanner.hpp
+MP/MPScene.hpp
+src/MP/MP/MPScene.hpp
+MP/RobotPlanner.hpp
+src/MP/MP/RobotPlanner.hpp
+MP/MPAbstraction.hpp
+src/MP/MP/MPAbstraction.hpp
+MP/MPTriAbstraction.hpp
+src/MP/MP/MPTriAbstraction.hpp
+MP/MPPrmAbstraction.hpp
+src/MP/MP/MPPrmAbstraction.hpp
+MP/MPMultiSearch.hpp
+src/MP/MP/MPMultiSearch.hpp
+MP/MPCoopAStar.hpp
+src/MP/MP/MPCoopAStar.hpp
+MP/MPPushAndSwap.hpp
+src/MP/MP/MPPushAndSwap.hpp
 
 src/MP/MPDiscretePlanner.hpp
 MP/MPScene.hpp
@@ -2357,6 +2381,8 @@ MP/MPCoopAStar.hpp
 src/MP/MP/MPCoopAStar.hpp
 MP/MPPushAndSwap.hpp
 src/MP/MP/MPPushAndSwap.hpp
+MP/MPSIPP.hpp
+src/MP/MP/MPSIPP.hpp
 Utils/GraphSearch.hpp
 src/MP/Utils/GraphSearch.hpp
 vector
@@ -2509,6 +2535,8 @@ Utils/Algebra3D.hpp
 src/MP/Utils/Algebra3D.hpp
 Utils/Timer.hpp
 src/MP/Utils/Timer.hpp
+cmath
+-
 
 src/MP/MPTreePlanner.hpp
 MP/MPPlanner.hpp
@@ -2539,6 +2567,8 @@ Utils/Timer.hpp
 src/MP/Utils/Timer.hpp
 stack
 -
+MP/MPFollowPlanner.hpp
+src/MP/MP/MPFollowPlanner.hpp
 
 src/Scenes/CreateScene.hpp
 Scenes/Scene.hpp

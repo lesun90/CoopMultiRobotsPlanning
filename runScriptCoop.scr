@@ -15,7 +15,7 @@ do
     for(( i = 0; i < 60; i++ ))
     do
       queryfile="data/$scene/query/query$i.txt"
-      resfile="stats_BACKUP2/$scene/res_${planner}_${robotType}_${depth}.txt"
+      resfile="stats/$scene/res_${planner}_${robotType}_${depth}_${searchType}.txt"
       echo "Run${planner} robotType:$robotType depth:$depth searchType:$searchType query:$queryfile"
       ./bin/Runner Run${planner}Planner $sceneFile $queryfile $nrRobot $robotType $depth $searchType $resfile
     done

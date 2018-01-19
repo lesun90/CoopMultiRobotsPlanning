@@ -81,13 +81,39 @@ namespace MP
 
     virtual bool LineOfSight(const int rid1, const int rid2);
 
-    virtual bool EdgesCheck(int fromNode, int toNode, int fromCheckNode, int toCheckNode, int step = 0);
+    virtual bool EdgesCheck(int fromNode, int toNode, int fromCheckNode, int toCheckNode);
 
     virtual double Dist2Region(int a, int b)
     {
       if (a==b)
       return 0;
       return Algebra2D::PointDist(m_regions[a]->m_cfg,m_regions[b]->m_cfg);
+    }
+
+    virtual double MaxCostToNeighbors(int k)
+    {
+      double maxVal = -1;
+      for (int i = 0 ; i < (int)m_regions[k]->m_weights.size(); i++)
+      {
+        if (maxVal < m_regions[k]->m_weights[i])
+        {
+          maxVal = m_regions[k]->m_weights[i];
+        }
+      }
+      return maxVal;
+    }
+
+    virtual double MinCostToNeighbors(int k)
+    {
+      double minVal = HUGE_VAL;
+      for (int i = 0 ; i < (int)m_regions[k]->m_weights.size(); i++)
+      {
+        if (minVal > m_regions[k]->m_weights[i])
+        {
+          minVal = m_regions[k]->m_weights[i];
+        }
+      }
+      return minVal;
     }
 
     struct Region
@@ -122,6 +148,7 @@ namespace MP
       std::vector<std::vector<int>> m_pathsToGoal;
       bool                          m_visited;
       bool                          m_hasSample;
+      std::vector<std::pair<int,int>> m_intervals;
     };
 
     MPScene                *m_scene;
@@ -140,7 +167,7 @@ namespace MP
     double m_maxEdgeDist;
     double m_minClearance;
     int   m_maxNeight;
-
+    double tttt;
     class RegionGraphSearchInfo : public GraphSearchInfo<int>
     {
     public:

@@ -28,28 +28,28 @@ The C compiler identification is GNU, found in "/home/youbot/Dropbox/workspace/C
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fb029/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fb029.dir/build.make CMakeFiles/cmTC_fb029.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_3a418/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3a418.dir/build.make CMakeFiles/cmTC_3a418.dir/build
 make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_fb029.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_fb029.dir/testCXXCompiler.cxx.o -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_fb029
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb029.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_fb029.dir/testCXXCompiler.cxx.o  -o cmTC_fb029 
+Building CXX object CMakeFiles/cmTC_3a418.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_3a418.dir/testCXXCompiler.cxx.o -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_3a418
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a418.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_3a418.dir/testCXXCompiler.cxx.o  -o cmTC_3a418 
 make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b8004/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b8004.dir/build.make CMakeFiles/cmTC_b8004.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_28d5f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_28d5f.dir/build.make CMakeFiles/cmTC_28d5f.dir/build
 make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_b8004.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_b8004.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_b8004
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8004.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_b8004.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_b8004 
+Building CXX object CMakeFiles/cmTC_28d5f.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_28d5f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_28d5f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28d5f.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_28d5f.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_28d5f 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -61,9 +61,9 @@ Thread model: posix
 gcc version 7.2.0 (Ubuntu 7.2.0-8ubuntu3) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_b8004' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cchtT6bJ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b8004 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_b8004.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_b8004' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_28d5f' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUr7WuR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_28d5f /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_28d5f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_28d5f' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
 
 
@@ -71,14 +71,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_b8004/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_b8004.dir/build.make CMakeFiles/cmTC_b8004.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_28d5f/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_28d5f.dir/build.make CMakeFiles/cmTC_28d5f.dir/build]
   ignore line: [make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_b8004.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_b8004.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_b8004]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8004.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_b8004.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_b8004 ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_28d5f.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_28d5f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_28d5f]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28d5f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_28d5f.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_28d5f ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -90,13 +90,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.2.0 (Ubuntu 7.2.0-8ubuntu3) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_b8004' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cchtT6bJ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b8004 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_b8004.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_28d5f' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUr7WuR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_28d5f /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_28d5f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cchtT6bJ.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccUr7WuR.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -116,7 +116,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_b8004] ==> ignore
+    arg [cmTC_28d5f] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -128,7 +128,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_b8004.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_28d5f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -156,14 +156,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_28508/fast"
-/usr/bin/make -f CMakeFiles/cmTC_28508.dir/build.make CMakeFiles/cmTC_28508.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_2d181/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2d181.dir/build.make CMakeFiles/cmTC_2d181.dir/build
 make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_28508.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_28508.dir/feature_tests.cxx.o -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_28508
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28508.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_28508.dir/feature_tests.cxx.o  -o cmTC_28508 
+Building CXX object CMakeFiles/cmTC_2d181.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_2d181.dir/feature_tests.cxx.o -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_2d181
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d181.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_2d181.dir/feature_tests.cxx.o  -o cmTC_2d181 
 make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
 
 
@@ -229,14 +229,14 @@ make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanni
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4619e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4619e.dir/build.make CMakeFiles/cmTC_4619e.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_fdddb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fdddb.dir/build.make CMakeFiles/cmTC_fdddb.dir/build
 make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4619e.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_4619e.dir/feature_tests.cxx.o -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_4619e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4619e.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_4619e.dir/feature_tests.cxx.o  -o cmTC_4619e 
+Building CXX object CMakeFiles/cmTC_fdddb.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_fdddb.dir/feature_tests.cxx.o -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_fdddb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fdddb.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_fdddb.dir/feature_tests.cxx.o  -o cmTC_fdddb 
 make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
 
 
@@ -302,14 +302,14 @@ make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanni
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_de1d4/fast"
-/usr/bin/make -f CMakeFiles/cmTC_de1d4.dir/build.make CMakeFiles/cmTC_de1d4.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_f1088/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f1088.dir/build.make CMakeFiles/cmTC_f1088.dir/build
 make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_de1d4.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_de1d4.dir/feature_tests.cxx.o -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_de1d4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de1d4.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_de1d4.dir/feature_tests.cxx.o  -o cmTC_de1d4 
+Building CXX object CMakeFiles/cmTC_f1088.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_f1088.dir/feature_tests.cxx.o -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_f1088
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1088.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_f1088.dir/feature_tests.cxx.o  -o cmTC_f1088 
 make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
 
 
@@ -375,14 +375,14 @@ make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanni
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_76cbf/fast"
-/usr/bin/make -f CMakeFiles/cmTC_76cbf.dir/build.make CMakeFiles/cmTC_76cbf.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_eca3c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_eca3c.dir/build.make CMakeFiles/cmTC_eca3c.dir/build
 make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_76cbf.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_76cbf.dir/feature_tests.cxx.o -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_76cbf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76cbf.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_76cbf.dir/feature_tests.cxx.o  -o cmTC_76cbf 
+Building CXX object CMakeFiles/cmTC_eca3c.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_eca3c.dir/feature_tests.cxx.o -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_eca3c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eca3c.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_eca3c.dir/feature_tests.cxx.o  -o cmTC_eca3c 
 make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
 
 
@@ -446,28 +446,28 @@ make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanni
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a66ed/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a66ed.dir/build.make CMakeFiles/cmTC_a66ed.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_371db/fast"
+/usr/bin/make -f CMakeFiles/cmTC_371db.dir/build.make CMakeFiles/cmTC_371db.dir/build
 make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a66ed.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_a66ed.dir/testCCompiler.c.o   -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_a66ed
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a66ed.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a66ed.dir/testCCompiler.c.o  -o cmTC_a66ed 
+Building C object CMakeFiles/cmTC_371db.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_371db.dir/testCCompiler.c.o   -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_371db
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_371db.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_371db.dir/testCCompiler.c.o  -o cmTC_371db 
 make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_569a5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_569a5.dir/build.make CMakeFiles/cmTC_569a5.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_e5cb5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e5cb5.dir/build.make CMakeFiles/cmTC_e5cb5.dir/build
 make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_569a5.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_569a5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.9/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_569a5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_569a5.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_569a5.dir/CMakeCCompilerABI.c.o  -o cmTC_569a5 
+Building C object CMakeFiles/cmTC_e5cb5.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e5cb5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.9/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_e5cb5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5cb5.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_e5cb5.dir/CMakeCCompilerABI.c.o  -o cmTC_e5cb5 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -479,9 +479,9 @@ Thread model: posix
 gcc version 7.2.0 (Ubuntu 7.2.0-8ubuntu3) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_569a5' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cctcxccz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_569a5 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_569a5.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_569a5' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e5cb5' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc3XFkbw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e5cb5 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_e5cb5.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e5cb5' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
 
 
@@ -489,14 +489,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_569a5/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_569a5.dir/build.make CMakeFiles/cmTC_569a5.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_e5cb5/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_e5cb5.dir/build.make CMakeFiles/cmTC_e5cb5.dir/build]
   ignore line: [make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_569a5.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_569a5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.9/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_569a5]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_569a5.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_569a5.dir/CMakeCCompilerABI.c.o  -o cmTC_569a5 ]
+  ignore line: [Building C object CMakeFiles/cmTC_e5cb5.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_e5cb5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.9/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_e5cb5]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5cb5.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_e5cb5.dir/CMakeCCompilerABI.c.o  -o cmTC_e5cb5 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -508,13 +508,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.2.0 (Ubuntu 7.2.0-8ubuntu3) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_569a5' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cctcxccz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_569a5 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_569a5.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e5cb5' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc3XFkbw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e5cb5 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_e5cb5.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cctcxccz.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc3XFkbw.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -534,7 +534,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_569a5] ==> ignore
+    arg [cmTC_e5cb5] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -546,7 +546,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_569a5.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_e5cb5.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -576,14 +576,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3ace8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3ace8.dir/build.make CMakeFiles/cmTC_3ace8.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_76be2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_76be2.dir/build.make CMakeFiles/cmTC_76be2.dir/build
 make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3ace8.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_3ace8.dir/feature_tests.c.o   -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.c
-Linking C executable cmTC_3ace8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ace8.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_3ace8.dir/feature_tests.c.o  -o cmTC_3ace8 
+Building C object CMakeFiles/cmTC_76be2.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_76be2.dir/feature_tests.c.o   -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.c
+Linking C executable cmTC_76be2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76be2.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_76be2.dir/feature_tests.c.o  -o cmTC_76be2 
 make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
 
 
@@ -596,14 +596,14 @@ make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanni
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8f59e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8f59e.dir/build.make CMakeFiles/cmTC_8f59e.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_60a86/fast"
+/usr/bin/make -f CMakeFiles/cmTC_60a86.dir/build.make CMakeFiles/cmTC_60a86.dir/build
 make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8f59e.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_8f59e.dir/feature_tests.c.o   -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.c
-Linking C executable cmTC_8f59e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f59e.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_8f59e.dir/feature_tests.c.o  -o cmTC_8f59e 
+Building C object CMakeFiles/cmTC_60a86.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_60a86.dir/feature_tests.c.o   -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.c
+Linking C executable cmTC_60a86
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_60a86.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_60a86.dir/feature_tests.c.o  -o cmTC_60a86 
 make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
 
 
@@ -616,14 +616,14 @@ make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanni
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_12cde/fast"
-/usr/bin/make -f CMakeFiles/cmTC_12cde.dir/build.make CMakeFiles/cmTC_12cde.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_7f6c4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7f6c4.dir/build.make CMakeFiles/cmTC_7f6c4.dir/build
 make[1]: Entering directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_12cde.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_12cde.dir/feature_tests.c.o   -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.c
-Linking C executable cmTC_12cde
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12cde.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_12cde.dir/feature_tests.c.o  -o cmTC_12cde 
+Building C object CMakeFiles/cmTC_7f6c4.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_7f6c4.dir/feature_tests.c.o   -c /home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/feature_tests.c
+Linking C executable cmTC_7f6c4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f6c4.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_7f6c4.dir/feature_tests.c.o  -o cmTC_7f6c4 
 make[1]: Leaving directory '/home/youbot/Dropbox/workspace/CoopMultiRobotsPlanning/CMakeFiles/CMakeTmp'
 
 

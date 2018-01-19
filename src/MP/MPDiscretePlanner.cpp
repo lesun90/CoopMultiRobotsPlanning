@@ -6,15 +6,26 @@ namespace MP
   void MPDiscretePlanner::CompleteSetup()
   {
     m_scene.CompleteSetup();
-    m_abstract = new MPPrmAbstraction();
     // m_abstract = new MPTriAbstraction();
-    printf("%d\n",m_abstract->m_regions.size() );
+    m_abstract = new MPPrmAbstraction();
+    // printf("%d\n",m_abstract->m_regions.size() );
     m_abstract->SetScene(&m_scene);
     m_abstract->CompleteSetup();
     m_robots.resize(m_scene.m_robotInit.size());
 
-    // m_multiSearch = new MPPushAndSwap();
-    m_multiSearch = new MPCoopAStar();
+    if (m_searchType == 0)
+    {
+      m_multiSearch = new MPCoopAStar();
+    }
+    else if (m_searchType == 1)
+    {
+      m_multiSearch = new MPPushAndSwap();
+    }
+    else if (m_searchType == 2)
+    {
+      m_multiSearch = new MPSIPP();
+    }
+
     m_multiSearch->SetAbstraction(m_abstract);
     m_multiSearch->CompleteSetup();
 
@@ -24,7 +35,12 @@ namespace MP
       m_multiSearch->m_inits[i] = m_abstract->LocateRegion(m_scene.m_robotInit[i]->m_cfg);
       m_multiSearch->m_goals[i] = m_abstract->LocateRegion(m_scene.m_goals[i]->m_cfg);
     }
-
+    m_pos = 0;
+    for (int i = 0; i< m_robots.size(); i++)
+    {
+      m_multiSearch->m_inits[i] = m_robots[i]->GetCurrentRegion();
+      m_multiSearch->m_pathsToGoal[i].clear();
+    }
   }
   void MPDiscretePlanner::MoveOneStep()
   {
@@ -49,13 +65,8 @@ namespace MP
 
   void MPDiscretePlanner::Run(const int nrIters)
   {
-    m_pos = 0;
-    for (int i = 0; i< m_robots.size(); i++)
-    {
-      m_multiSearch->m_inits[i] = m_robots[i]->GetCurrentRegion();
-      m_multiSearch->m_pathsToGoal[i].clear();
-    }
-
+    Timer::Clock clk;
+    Timer::Start(&clk);
     if (m_multiSearch->isSolved() == false)
     {
       m_multiSearch->RunSearch(m_multiSearch->m_inits);
@@ -64,11 +75,10 @@ namespace MP
     {
       // printf("solved\n" );
     }
-
+    printf("time: %f\n",Timer::Elapsed(&clk) );
     for (int i = 0; i< m_robots.size(); i++)
     {
       // printf("%d size %d \n",i,m_multiSearch->m_pathsToGoal[i].size() );
-
     }
   }
 

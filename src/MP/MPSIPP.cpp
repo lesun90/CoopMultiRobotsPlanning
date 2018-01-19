@@ -5,7 +5,7 @@ namespace MP
 {
   MPSIPP::MPSIPP()
   {
-    m_depth = 0;
+    printf("Use SIPP search\n");
   }
 
   bool MPSIPP::RunSearch(std::vector<int> inits)
@@ -15,25 +15,39 @@ namespace MP
     {
       m_robotOrder.push_back(r);
     }
-    SIPP(inits);
 
-    // int nrtries = RandomUniformInteger(std::max(1,m_nrRobot/2), m_nrRobot);
-    // for (int iter = 0 ; iter < nrtries && isSolved() == false; iter++)
-    // {
-    //   SIPP(inits);
-    // }
+    int nrtries = RandomUniformInteger(std::max(1,m_nrRobot/2), m_nrRobot/2);
+    Timer::Clock clk;
+    Timer::Start(&clk);
+    for (int iter = 0 ; iter < nrtries && isSolved() == false; iter++)
+    {
+      SIPP(inits);
+    }
+    if (isSolved() == false)
+    {
+      for (int r = 0 ; r < m_nrRobot; r++)
+      {
+        if (m_pathsToGoal[r].size()==0)
+        {
+          SetPathToGoal(r, m_abstract->m_regions[inits[r]]->m_pathsToGoal[r]);
+        }
+      }
+    }
+
+    Stats::GetSingleton()->AddValue("FindPathTime", Timer::Elapsed(&clk));
+    Stats::GetSingleton()->AddValue("NrFindPath", 1);
 
     return isSolved();
   }
 
-  bool MPSIPP::SIPP(std::vector<int> inits)
+  void MPSIPP::SIPP(std::vector<int> inits)
   {
     ClearPaths();
-    // std::random_shuffle ( m_robotOrder.begin(), m_robotOrder.end() );
+    std::random_shuffle ( m_robotOrder.begin(), m_robotOrder.end() );
     int rid = m_robotOrder.front();
     SetPathToGoal(rid, m_abstract->m_regions[inits[rid]]->m_pathsToGoal[rid]);
+    // printf("solved %d %d\n",rid, m_pathsToGoal[rid].size() );
     UpdateIntervals();
-    ReservePath(m_pathsToGoal[rid]);
     for (int i = 1; i < m_nrRobot; i++)
     {
       rid = m_robotOrder[i];
@@ -50,8 +64,8 @@ namespace MP
       m_SIPPsearch.m_ridGoal = m_goals[rid];
       m_SIPPsearch.m_rid = rid;
       m_SIPPsearch.m_safeInterval = m_safeInterval;
-      m_SIPPsearch.m_reservetable = m_reservetable;
       m_SIPPsearch.m_inits = inits;
+      m_SIPPsearch.m_pathsToGoal = m_pathsToGoal;
 
       initKey.push_back(inits[rid]);
       initKey.push_back(0);
@@ -64,77 +78,34 @@ namespace MP
 
       if (astarPath.size()>0)
       {
-        printf("solved %d\n",rid );
+        // printf("solved %d\n",rid );
         m_pathsToGoal[rid].clear();
         for (int k = 0; k < astarPath.size()-1; ++k)
         {
-          printf("%d %d\n",astarPath[k][0],astarPath[k][1] );
+          // printf("%d %d\n",astarPath[k][0],astarPath[k][1] );
           for(int o = 0; o < astarPath[k+1][1] - astarPath[k][1]; o++)
           {
             m_pathsToGoal[rid].push_back(astarPath[k][0]);
           }
         }
         m_pathsToGoal[rid].push_back(astarPath.back()[0]);
-      }
-      UpdateIntervals();
-      ReservePath(m_pathsToGoal[rid]);
-    }
-  }
-
-  void MPSIPP::ReservePath(std::vector<int> path)
-  {
-    for (int i = 0 ; i < m_depth; i++)
-    {
-      SpaceTimeNode *st;
-      auto it = m_reservetable.find(i);
-      if(it == m_reservetable.end())
-      {
-        st = new SpaceTimeNode();
-        st->m_timeid = i;
-        if (i < path.size())
-        {
-          if(i==0)
-          {
-            st->m_reserNodeFrom.push_back(path[i]);
-            st->m_reserNodeTo.push_back(path[i]);
-          }
-          else
-          {
-            st->m_reserNodeFrom.push_back(path[i-1]);
-            st->m_reserNodeTo.push_back(path[i]);
-          }
-        }
-        else
-        {
-          st->m_reserNodeFrom.push_back(path.back());
-          st->m_reserNodeTo.push_back(path.back());
-        }
-
-        st->m_reserveSize = st->m_reserNodeFrom.size();
-        m_reservetable.insert(std::make_pair(st->m_timeid, st));
+        UpdateIntervals();
       }
       else
       {
-        st = it->second;
-        if (i < path.size())
-        {
-          if(i==0)
-          {
-            st->m_reserNodeFrom.push_back(path[i]);
-            st->m_reserNodeTo.push_back(path[i]);
-          }
-          else
-          {
-            st->m_reserNodeFrom.push_back(path[i-1]);
-            st->m_reserNodeTo.push_back(path[i]);
-          }
-        }
-        else
-        {
-          st->m_reserNodeFrom.push_back(path.back());
-          st->m_reserNodeTo.push_back(path.back());
-        }
-        st->m_reserveSize = st->m_reserNodeFrom.size();
+        break;
+      }
+    }
+  }
+
+  void MPSIPP::CompletePaths()
+  {
+    for (int r = 0 ; r < m_nrRobot; r++)
+    {
+      std::vector<int> pathToEnd = m_abstract->m_regions[m_pathsToGoal[r].back()]->m_pathsToGoal[r];
+      if (pathToEnd.size() > 0)
+      {
+        m_pathsToGoal[r].insert(m_pathsToGoal[r].end(),pathToEnd.begin()+1,pathToEnd.end() );
       }
     }
   }
@@ -144,71 +115,37 @@ namespace MP
     std::vector<double> * const costs) const
   {
     int s = u[0];
-    printf("s %d %d [%d %d]\n\n",s,u[1],u[2],u[3] );
+    // printf("s %d %d [%d %d]\n\n",s,u[1],u[2],u[3] );
     int t = u[1];
     const int n = m_abstract->m_regions[s]->m_neighs.size();
     for(int i = 0; i < n; ++i)
     {
+
       double cost     = m_abstract->m_regions[s]->m_dists[i];
       int cfg         = m_abstract->m_regions[s]->m_neighs[i];
       int startTime   = u[1] + 1;
       int endTime     = u[3] + 1;
-
-      for (int k = 0 ; k < m_safeInterval[cfg].size();k++)
-      {
-        printf("cfg %d ",cfg );
-        printf("[%d %d]\n",m_safeInterval[cfg][k].first,m_safeInterval[cfg][k].second );
-        if ((m_safeInterval[cfg][k].first > endTime) || (m_safeInterval[cfg][k].second < startTime))
-        {
-          continue;
-        }
-        int t = startTime > m_safeInterval[cfg][k].first ? startTime : m_safeInterval[cfg][k].first;
-          std::vector<int> from;
-          from.push_back(s);
-          from.push_back(t-1);
-          std::vector<int> to;
-          to.push_back(cfg);
-          to.push_back(t);
-          if (CheckWithReserTable(from,to) == true)
-          {
-            printf("add at time %d %d\n",cfg,t);
-            std::vector<int> neigh;
-            neigh.push_back(cfg);
-            neigh.push_back(t);
-            neigh.push_back(m_safeInterval[cfg][k].first);
-            neigh.push_back(m_safeInterval[cfg][k].second);
-            edges->push_back(neigh);
-            costs->push_back(cost);
-            break;
-          }
-          printf("not at time %d %d\n",cfg,t);
-
-      }
-    }
-
-    double cost     = m_abstract->MaxCostToNeighbors(s);
-    int cfg         = s;
-    int startTime   = u[1] + 1;
-    int endTime     = u[2] + 1;
-    for (int k = 0 ; k < m_safeInterval[cfg].size();k++)
-    {
-      printf("cfg %d ",cfg );
-      printf("[%d %d]\n",m_safeInterval[cfg][k].first,m_safeInterval[cfg][k].second );
-
-      if ((m_safeInterval[cfg][k].first > endTime) || (m_safeInterval[cfg][k].second < startTime))
+      if (s == cfg)
       {
         continue;
       }
-      int t = startTime > m_safeInterval[cfg][k].first ? startTime : m_safeInterval[cfg][k].first;
-        std::vector<int> from;
-        from.push_back(s);
-        from.push_back(t-1);
-        std::vector<int> to;
-        to.push_back(cfg);
-        to.push_back(t);
-        if (CheckWithReserTable(from,to) == true)
+      for (int k = 0 ; k < m_safeInterval[cfg].size();k++)
+      {
+        // printf("cfg %d ",cfg);
+        // printf("[%d %d]\n",m_safeInterval[cfg][k].first,m_safeInterval[cfg][k].second );
+        if ((m_safeInterval[cfg][k].first > endTime) || (m_safeInterval[cfg][k].second < startTime))
         {
-          printf("add at time %d %d\n",cfg,t);
+          // printf("not in interval at time %d\n",startTime);
+          continue;
+        }
+        int t = startTime > m_safeInterval[cfg][k].first ? startTime : m_safeInterval[cfg][k].first;
+        if (CheckMovement(s,cfg,t) == true)
+        {
+          if (k>0)
+          {
+            cost = cost * (m_safeInterval[cfg][k].first - m_safeInterval[cfg][k-1].second );
+          }
+          // printf("add %d at time %d\n",cfg, t);
           std::vector<int> neigh;
           neigh.push_back(cfg);
           neigh.push_back(t);
@@ -216,61 +153,99 @@ namespace MP
           neigh.push_back(m_safeInterval[cfg][k].second);
           edges->push_back(neigh);
           costs->push_back(cost);
-          break;
         }
-        printf("not at time %d %d\n",cfg,t);
+        else
+        {
+          // printf("not %d at time %d\n",cfg, t);
+        }
       }
+    }
+
+    double cost     = m_abstract->MinCostToNeighbors(s)*0.99;
+    int cfg         = s;
+    int startTime   = u[1] + 1;
+    int endTime     = u[2] + 1;
+    for (int k = 0 ; k < m_safeInterval[cfg].size();k++)
+    {
+      // printf("cfg %d ",cfg);
+      // printf("[%d %d]\n",m_safeInterval[cfg][k].first,m_safeInterval[cfg][k].second );
+      if ((m_safeInterval[cfg][k].first > endTime) || (m_safeInterval[cfg][k].second < startTime))
+      {
+        // printf("not in interval at time %d\n",startTime);
+        continue;
+      }
+      int t = startTime > m_safeInterval[cfg][k].first ? startTime : m_safeInterval[cfg][k].first;
+      if (CheckMovement(s,cfg,t) == true)
+      {
+        if (k>0)
+        {
+          cost = cost * (m_safeInterval[cfg][k].first - m_safeInterval[cfg][k-1].second );
+        }
+        // printf("add %d at time %d\n",cfg, t);
+        std::vector<int> neigh;
+        neigh.push_back(cfg);
+        neigh.push_back(t);
+        neigh.push_back(m_safeInterval[cfg][k].first);
+        neigh.push_back(m_safeInterval[cfg][k].second);
+        edges->push_back(neigh);
+        costs->push_back(cost);
+      }
+      else
+      {
+        // printf("not %d at time %d\n",cfg, t);
+      }
+    }
 
     // getchar();
   }
 
   double MPSIPP::SIPPSearch::HeuristicCostToGoal(const std::vector<int> u) const
   {
-    return m_abstract->m_regions[u[0]]->m_distToGoals[m_rid];;
+    return m_abstract->m_regions[u[0]]->m_distToGoals[m_rid];
   }
 
   bool MPSIPP::SIPPSearch::IsGoal(const std::vector<int>  key) const
   {
-    return key[0] == m_ridGoal;
+    if (key[0] != m_ridGoal)
+    {
+      return false;
+    }
+    for (int k = 0 ; k < m_safeInterval[key[0]].size(); k++)
+    {
+      if (key[1] < m_safeInterval[key[0]][k].first)
+      {
+        return false;
+      }
+    }
+    return true;
   }
 
-  bool MPSIPP::SIPPSearch::CheckWithReserTable(std::vector<int> from, std::vector<int> to) const
+  bool MPSIPP::SIPPSearch::CheckMovement(int from, int to, int timeid) const
   {
-    // if (to[1] == 1)
-    // {
-    //   for (int r = 0 ; r < m_nrRobot; r++)
-    //   {
-    //     if(r == m_rid)
-    //     {
-    //       continue;
-    //     }
-    //
-    //     if (m_abstract->EdgesCheck(m_inits[r],m_inits[r],from[0],to[0]) == false)
-    //     {
-    //       return false;
-    //     }
-    //   }
-    // }
-
-    SpaceTimeNode *st;
-    auto it = m_reservetable.find(to[1]);
-    if(it != m_reservetable.end())
+    for (int r = 0; r < (int)m_pathsToGoal.size();r++)
     {
-      st = it->second;
-      for (int i = 0 ; i < st->m_reserveSize; i++)
+      if ((r == m_rid) || ((int)m_pathsToGoal[r].size() == 0))
       {
-        printf("check %d %d %d\n",from[0], to[0], to[1] );
-        printf("with %d %d\n",st->m_reserNodeFrom[i],st->m_reserNodeTo[i] );
-        if (m_abstract->EdgesCheck(from[0],to[0],st->m_reserNodeFrom[i],st->m_reserNodeTo[i],to[1]) == false)
-        {
-          return false;
-        }
+        continue;
       }
-      return true;
-    }
-    else
-    {
-      return true;
+      if (timeid >= (int)m_pathsToGoal[r].size())
+      {
+        timeid = (int)m_pathsToGoal[r].size()-1;
+      }
+      int otherTo = m_pathsToGoal[r][timeid];
+      int otherFrom = m_pathsToGoal[r][timeid==0?0:timeid-1];
+      if(m_abstract->EdgesCheck(from,to,otherFrom,otherTo) == false)
+      {
+        return false;
+      }
+      // if(otherTo == to)
+      // {
+      //   return false;
+      // }
+      // if((otherTo == from) && (otherFrom == to))
+      // {
+      //   return false;
+      // }
     }
     return true;
   }
@@ -287,8 +262,8 @@ namespace MP
         maxTime = (int)m_pathsToGoal[r].size();
       }
     }
-    maxTime = 9999;
-
+    maxTime = maxTime*m_nrRobot;
+    // printf("maxTime %d\n",maxTime );
     std::vector<std::vector<int>> notsafeTime;
     notsafeTime.resize((int)m_abstract->m_regions.size());
 
@@ -349,10 +324,6 @@ namespace MP
   {
     m_pathsToGoal[rid].clear();
     m_pathsToGoal[rid] = path;
-    if (m_depth < m_pathsToGoal[rid].size())
-    {
-      m_depth = m_pathsToGoal[rid].size();
-    }
   }
 
   bool MPSIPP::isSolved()
