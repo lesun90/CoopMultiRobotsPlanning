@@ -24,6 +24,26 @@ make
 " target="_blank"><img src="http://img.youtube.com/vi/ExR0GADeCvk/0.jpg" 
 alt="" width="240" height="180" border="10" /></a>
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=kKqS2OkRLQM
+" target="_blank"><img src="http://img.youtube.com/vi/kKqS2OkRLQM/0.jpg" 
+alt="" width="240" height="180" border="10" /></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=x_AYG531AI
+" target="_blank"><img src="http://img.youtube.com/vi/x_AYG531AI/0.jpg" 
+alt="" width="240" height="180" border="10" /></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=bTrl3N1obVU
+" target="_blank"><img src="http://img.youtube.com/vi/bTrl3N1obVU/0.jpg" 
+alt="" width="240" height="180" border="10" /></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=vzleSt7PRU
+" target="_blank"><img src="http://img.youtube.com/vi/vzleSt7PRU/0.jpg" 
+alt="" width="240" height="180" border="10" /></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=G6mwNYJW07M
+" target="_blank"><img src="http://img.youtube.com/vi/G6mwNYJW07M/0.jpg" 
+alt="" width="240" height="180" border="10" /></a>
+
 ## License
 
 Please contact me via lesun90@gmail.com if you want to use this code for your work.
