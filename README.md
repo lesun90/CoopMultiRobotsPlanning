@@ -19,6 +19,9 @@ make
 ```
 - Press "r" until solved.
 
+### Video Demonstration
+goo.gl/93Vo1N
+
 
 ## License
 
