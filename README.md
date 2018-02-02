@@ -20,8 +20,9 @@ make
 - Press "r" until solved.
 
 ### Video Demonstration
-goo.gl/93Vo1N
-
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=ExR0GADeCvk
+" target="_blank"><img src="http://img.youtube.com/vi/ExR0GADeCvk/0.jpg" 
+alt="" width="240" height="180" border="10" /></a>
 
 ## License
 
