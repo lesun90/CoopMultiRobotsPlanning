@@ -21,7 +21,7 @@ make
 
 ### Video Demonstration
 
-[Video playlist](https://www.google.com)
+[Video playlist](goo.gl/iuFF4Q)
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=ExR0GADeCvk
 " target="_blank"><img src="http://img.youtube.com/vi/ExR0GADeCvk/0.jpg" 
