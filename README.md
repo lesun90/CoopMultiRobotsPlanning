@@ -18,8 +18,10 @@ sudo apt-get install freeglut3-dev
 sudo apt-get install libpng-dev
 ```
 
-Download bulletphysics Library, unzip and go to unzipped folder [https://github.com/bulletphysics/bullet3/archive/2.87.zip](https://github.com/bulletphysics/bullet3/archive/2.87.zip)
 
+Download bulletphysics Library at [https://github.com/bulletphysics/bullet3/archive/2.87.zip](https://github.com/bulletphysics/bullet3/archive/2.87.zip)
+
+Unzip and go to unzipped folder 
 ```
 cmake .
 make
